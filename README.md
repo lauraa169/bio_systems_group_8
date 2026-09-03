@@ -1,7 +1,7 @@
 # # Epidemiological Model Assignment — Parameter Exploration
 
 **Course**: KEN3170 — Multi-scale modeling of biological systems
-**Group number**: [X]
+**Group number**: [8]
 
 ---
 

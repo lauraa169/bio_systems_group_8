@@ -77,7 +77,7 @@ The resulting DataFrame contains one row for each recovery rate:
 - A high transmission scenario is more dangerous for public health because, at all tested recovery rates, the peak number of infected people is significantly higher than in the low transmission rate scenario. This gap is wide as the recovery rate is smaller, as we can see in the first plot, but even at the highest tested recovery rate, the high transmission scenario still has a higher number of infected individuals. It is also more dangerous for public health because the total number of deaths is always higher in the high transmission scenario, regardless of the recovery ate, as we can see in the second plot. This is because the higher transmission rate leads to more infections, which in turn leads to more deaths, even if the recovery rate is high. Therefore, controlling the transmission rate is crucial
 
 ---
-
+ 
 ## 4. Part 3 — Policy recommendations TODO
 - 4.1 Parameter impact analysis
 - 4.2 Intervention analysis

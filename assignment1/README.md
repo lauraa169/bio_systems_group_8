@@ -83,13 +83,23 @@ The resulting DataFrame contains one row for each recovery rate:
 ---
 
 ## 4. Part3: - policy recommendations
-- 4.1 Parameter Impact analysis
-- Figures generated in part 1 and part 2 were used, recovery rate was studied in relation with peak infection number, total deaths and epidemic duration.
-- 4.2 Intervention analysis
+### 4.1 Parameter Impact analysis
+Figures generated in part 1 and part 2 were used, recovery rate was studied in relation with peak infection number, total deaths and epidemic duration.
+
+- High Transmission Scenario: $I_{\text{peak}} = 907.4115,e^{-10.1473\gamma}$ with $R^2 = 0.9938$
+
+- Low Transmission Scenario: $I_{\text{peak}} = 979.2336,e^{-23.8368\gamma}$ with $R^2 = 0.9866$
+
+The residuals of both approximations converge towards zero as $\gamma \to 0.9$.
+
+### 4.2 Intervention analysis
 - Data generated in part 1 and 2 were used, adjusting recovery rate showed promising returns.
-- 4.3 Real-world application
+### 4.3 Real-world application
 - Impact of recovery rate was researched in the real world, an example to help increase recovery rate at a hospital level was suggested.
 
 ---
 ## 5. Conclusion
 - Recovery rate was estimated to be a promising parameter to optimize for a more hopeful epidemic outcome, transmission rate had an effect on phenomenon studied under recovery rate so experiments on parametric analysis for transmission rate could be a promising idea for the future.
+
+## References
+- Coefficient of determination: https://en.wikipedia.org/wiki/Coefficient_of_determination

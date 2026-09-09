@@ -6,14 +6,14 @@
 ---
 
 ## 1. Repository overview
-- `analysis.ipynb` — main notebook containing all required sections (Setup, Part 1–3, Conclusions)
+- `SIRD_parameter_exploration.ipynb` — main notebook containing all required sections (Setup, Part 1–3, Conclusions)
 - `requirements.txt` — Python dependencies (numpy, matplotlib, pandas, scipy, seaborn)
 - `README.md` — this file
 
 **How to run**:
 
 - `pip install -r requirements.txt` 
-- open and run `analysis.ipynb` top to bottom
+- open and run `SIRD_parameter_exploration.ipynb` top to bottom
 
 ---
 

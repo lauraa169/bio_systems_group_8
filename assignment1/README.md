@@ -52,7 +52,7 @@ The resulting DataFrame contains one row for each recovery rate:
 ## 3. Part 2 — Scenario comparison
 - `analyze_recovery_rates(beta, mu, N, I0, simulation_days)` is used to create 2 datasets (one with -high transmission rate the other with low transmission rate).
 - `pyplot` from `matplotlib` was used to plot the results to allow for visual interperation.
-output format is the same as previously mentioned format.
+- output format is the same as previously mentioned format.
 
 ### Results
 **Scenario A (High Transmission)**

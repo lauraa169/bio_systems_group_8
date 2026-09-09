@@ -50,6 +50,10 @@ The resulting DataFrame contains one row for each recovery rate:
 ---
 
 ## 3. Part 2 — Scenario comparison
+- `analyze_recovery_rates(beta, mu, N, I0, simulation_days)` is used to create 2 datasets (one with -high transmission rate the other with low transmission rate).
+- `pyplot` from `matplotlib` was used to plot the results to allow for visual interperation.
+output format is the same as previously mentioned format.
+
 ### Results
 **Scenario A (High Transmission)**
 | Recovery Rate ($\gamma$) | Peak Infected | Peak Infected Day | Total Deaths | $R_0$ |
@@ -77,12 +81,15 @@ The resulting DataFrame contains one row for each recovery rate:
 - A high transmission scenario is more dangerous for public health because, at all tested recovery rates, the peak number of infected people is significantly higher than in the low transmission rate scenario. This gap is wide as the recovery rate is smaller, as we can see in the first plot, but even at the highest tested recovery rate, the high transmission scenario still has a higher number of infected individuals. It is also more dangerous for public health because the total number of deaths is always higher in the high transmission scenario, regardless of the recovery ate, as we can see in the second plot. This is because the higher transmission rate leads to more infections, which in turn leads to more deaths, even if the recovery rate is high. Therefore, controlling the transmission rate is crucial
 
 ---
- 
-## 4. Part 3 — Policy recommendations TODO
-- 4.1 Parameter impact analysis
+
+## 4. Part3: - policy recommendations
+- 4.1 Parameter Impact analysis
+- Figures generated in part 1 and part 2 were used, recovery rate was studied in relation with peak infection number, total deaths and epidemic duration.
 - 4.2 Intervention analysis
+- Data generated in part 1 and 2 were used, adjusting recovery rate showed promising returns.
 - 4.3 Real-world application
+- Impact of recovery rate was researched in the real world, an example to help increase recovery rate at a hospital level was suggested.
 
 ---
-
-## 5. Conclusions TODO
+## 5. Conclusion
+- Recovery rate was estimated to be a promising parameter to optimize for a more hopeful epidemic outcome, transmission rate had an effect on phenomenon studied under recovery rate so experiments on parametric analysis for transmission rate could be a promising idea for the future.

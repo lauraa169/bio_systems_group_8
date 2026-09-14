@@ -25,7 +25,9 @@ Then open `analysis.ipynb` in Jupyter Notebook, JupyterLab, or another compatibl
 ---
 
 ## 2. Part 1 — Visualizing reaction maximal activity data
+a) No, the maximal reactions are not equal in a linear pathway, for example between PGM and ENO, there's a difference in the maximal reactions. The maximal reaction of PGM is 21.7, while the maximal reaction of ENO is 29.3. this is because the maximal reactions is the vmax, in other words the maximal number of reactions that can occur depending on the enzyme availability, and this might be different for adjacent enzymes in a linear pathway.
 
+b) The two possible values that the grey arrows can have are 0.00 or n.d. The difference is that 0.00 means that data for this reaction was collected and it was 0.00, which might mean that that gene is not expressed in the cell. While n.d. means "no data", which moight mean that the data for this reaction is not in the loaded dataset.
 
 ## 3. Part 2 — Adjusting upper and lower flux bounds
 
@@ -94,6 +96,13 @@ The notebook prints a table containing the lower and upper flux bounds for every
 
 ## 4. Part 3 — Flux Balance Analysis
 
+a) the notebook first optimizes the model using FBA with the `model.optimize()` function, which computes the optimal flux distribution that maximizes the objective function (biomass production). The it prints the maximal biomass production value, which is: 0.8732862458582367
+
+
+b) for part b, the notebook sets the absolute flux of the glucose exchange reaction to 5, but keeping in mind that in cobrapy the intake in the cell is defined using a negative sign, so it's -5. This constraint describes an upper limit in the intake rate of glucose into the cell (extracellular). Whereas the other expression-based constraints decribe bounds on the internal reaction rates of the metabolites in the cell (intracellular).
+
+
+c) the notebook reoptimizes the model with the new glucose exchange constraint ans the new biomass production value is: 0.41559777509290663
 
 ---
 

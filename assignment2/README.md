@@ -106,7 +106,44 @@ c) the notebook reoptimizes the model with the new glucose exchange constraint a
 
 ---
 
-## 5. Requirements
+## 5. Part 4 - Glucose Uptake and Maximal Biomass
+
+a) The code iterates through glucose uptake rates from 1 to 15.1 mmol/gDW/h in steps of 0.1. For each rate:
+
+The lower bound of EX_glc__D_e is set to -rate (negative because uptake is modeled as a negative flux).
+
+The model is optimized using:
+```python
+model.optimize()
+``` 
+
+The resulting objective value (maximal biomass production) is stored.
+
+The collected values are then plotted with:
+
+- X-axis: Glucose Uptake Rate (mmol/gDW/h)
+
+- Y-axis: Maximal Biomass Production (1/h)
+
+The plot shows linear growth until the glucose uptake rate reaches approximately 10 mmol/gDW/h. Beyond this point, the curve begins to flatten and becomes constant.
+
+b)No. The growth rate does not increase indefinitely with increasing glucose exchange reaction flux bound.
+
+Maximal biomass production increases linearly with glucose uptake until the rate reaches roughly 10 mmol/gDW/h. After that, the curve flattens, meaning that additional glucose does not translate into additional biomass.
+
+c)To determine why the growth curve flattens, the model is optimized at the glucose uptake rate of 10 mmol/gDW/h, and the fluxes of all exchange reactions are outputed.
+
+Two observations:
+
+- EX_o2_e equals -20.55, meaning that the oxygen uptake has hit its upper bound and the cell cannot take up any more oxygen.
+
+- EX_ac_e equals +1.25, meaning that acetate is being eliminated.
+
+Together, these two facts show that the growth limitation at high glucose uptake rates is caused by the oxygen uptake constraint, not by glucose availability.
+
+---
+
+## 6. Requirements
 
 The notebook uses:
 
@@ -122,7 +159,7 @@ pip install -r requirements.txt
 
 ---
 
-## 6. Files required
+## 7. Files required
 
 Make sure the following files are located in the same directory as the notebook:
 

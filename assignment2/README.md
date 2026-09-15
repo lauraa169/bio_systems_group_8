@@ -25,7 +25,7 @@ Then open `analysis.ipynb` in Jupyter Notebook, JupyterLab, or another compatibl
 ---
 
 ## 2. Part 1 — Visualizing reaction maximal activity data
-a) No, the maximal reactions are not equal in a linear pathway, for example between PGM and ENO, there's a difference in the maximal reactions. The maximal reaction of PGM is 21.7, while the maximal reaction of ENO is 29.3. this is because the maximal reactions is the vmax, in other words the maximal number of reactions that can occur depending on the enzyme availability, and this might be different for adjacent enzymes in a linear pathway.
+a) No, in the case of E.Coli, we are looking at a complex system with branching, cyclic, converging pathways. Additionally flux values are not required to be equal, because sume reactions (e.g. PGI) can also carry flux in the reverse direction oir receive metabolites through alternate routes. Therefore one molecule can be sent into several different pathways. For example the g6p_c from the reaction GLCpts (21.1) can be sent to either PGI (11.1) or G6PDH2r (6.5) or both. Another example would be the reactions around Pyruvate (pyr_c), which can be used in several reactions (PYK, PDH, PPS, LDH_D, etc) depending on the system's needs.
 
 b) The two possible values that the grey arrows can have are 0.00 or n.d. The difference is that 0.00 means that data for this reaction was collected and it was 0.00, which might mean that that gene is not expressed in the cell. While n.d. means "no data", which moight mean that the data for this reaction is not in the loaded dataset.
 
@@ -96,13 +96,15 @@ The notebook prints a table containing the lower and upper flux bounds for every
 
 ## 4. Part 3 — Flux Balance Analysis
 
-a) the notebook first optimizes the model using FBA with the `model.optimize()` function, which computes the optimal flux distribution that maximizes the objective function (biomass production). The it prints the maximal biomass production value, which is: 0.8732862458582367
+a) First, we optimizes the model using FBA with the `model.optimize()` function, which computes the optimal flux distribution that maximizes the objective function (biomass production). Then we print the maximal biomass production value, which is: 0.8732862458582367
 
 
-b) for part b, the notebook sets the absolute flux of the glucose exchange reaction to 5, but keeping in mind that in cobrapy the intake in the cell is defined using a negative sign, so it's -5. This constraint describes an upper limit in the intake rate of glucose into the cell (extracellular). Whereas the other expression-based constraints decribe bounds on the internal reaction rates of the metabolites in the cell (intracellular).
+b) for part b, we set the absolute flux of the glucose exchange reaction to 5, but keeping in mind that in cobrapy the intake in the cell is defined using a negative sign, so it's -5. 
+This constraint describes a hard upper limit for the intake rate of glucose into the cell (extracellular). Whereas the other expression-based constraints decribe bounds on the internal reaction rates of the metabolites in the cell (intracellular).
 
 
-c) the notebook reoptimizes the model with the new glucose exchange constraint ans the new biomass production value is: 0.41559777509290663
+c) We then reoptimize the model with the new glucose exchange constraint and get the follwoing new biomass production value: 0.41559777509290663.
+The reason for this is that the model in this case has less substrate and energy available for the biomass reaction.
 
 ---
 
@@ -129,17 +131,17 @@ The plot shows linear growth until the glucose uptake rate reaches approximately
 
 b)No. The growth rate does not increase indefinitely with increasing glucose exchange reaction flux bound.
 
-Maximal biomass production increases linearly with glucose uptake until the rate reaches roughly 10 mmol/gDW/h. After that, the curve flattens, meaning that additional glucose does not translate into additional biomass.
+Maximal biomass production increases linearly (dB=0.009166) with glucose uptake until the rate reaches 9.4mmol/gDW/h then increases again (dB=0.004591) until it reaches 10.8 mmol/gDW/h. After that, the curve flattens, meaning that additional glucose does not translate into additional biomass.
 
-c)To determine why the growth curve flattens, the model is optimized at the glucose uptake rate of 10 mmol/gDW/h, and the fluxes of all exchange reactions are outputed.
+c) To determine why the growth curve changes, the model is optimized at the glucose uptake rate around 9.4mmol/gDW/h, and the fluxes of all exchange reactions are outputed.
 
 Two observations:
 
 - EX_o2_e equals -20.55, meaning that the oxygen uptake has hit its upper bound and the cell cannot take up any more oxygen.
 
-- EX_ac_e equals +1.25, meaning that acetate is being eliminated.
+- EX_ac_e secretion begins at 9.4mmol, meaning the carbon is being being rerouted to acetate formation, slowing the biomass production. Later, at 10.7mmol glucose uptake, the acetate exchange plateaus at 2.5 due to the optimal stochiometric balance of reactions PTAr, ACKr and EX_ac_e
 
-Together, these two facts show that the growth limitation at high glucose uptake rates is caused by the oxygen uptake constraint, not by glucose availability.
+Together, these two facts show that the growth limitation at high glucose uptake rates is caused by the oxygen uptake constraint and limitations of acetate secretion, not by glucose availability.
 
 ---
 

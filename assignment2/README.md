@@ -25,7 +25,7 @@ Then open `analysis.ipynb` in Jupyter Notebook, JupyterLab, or another compatibl
 ---
 
 ## 2. Part 1 — Visualizing reaction maximal activity data
-a) No, in the case of E.Coli, we are looking at a complex system with branching, cyclic, converging pathways. Additionally flux values are not required to be equal, because sume reactions (e.g. PGI) can also carry flux in the reverse direction oir receive metabolites through alternate routes. Therefore one molecule can be sent into several different pathways. For example the g6p_c from the reaction GLCpts (21.1) can be sent to either PGI (11.1) or G6PDH2r (6.5) or both. Another example would be the reactions around Pyruvate (pyr_c), which can be used in several reactions (PYK, PDH, PPS, LDH_D, etc) depending on the system's needs.
+a) No, in the case of E.Coli, we are looking at a complex (non-linear) system with branching, cyclic, converging pathways. Additionally flux values are not required to be equal, because sume reactions (e.g. PGI) can also carry flux in the reverse direction oir receive metabolites through alternate routes. Therefore one molecule can be sent into several different pathways. For example the g6p_c from the reaction GLCpts (21.1) can be sent to either PGI (11.1) or G6PDH2r (6.5) or both. Another example would be the reactions around Pyruvate (pyr_c), which can be used in several reactions (PYK, PDH, PPS, LDH_D, etc) depending on the system's needs.
 
 b) The two possible values that the grey arrows can have are 0.00 or n.d. The difference is that 0.00 means that data for this reaction was collected and it was 0.00, which might mean that that gene is not expressed in the cell. While n.d. means "no data", which moight mean that the data for this reaction is not in the loaded dataset.
 

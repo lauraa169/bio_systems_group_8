@@ -1,0 +1,3 @@
+ - Which mutation is most dangerous and why? Provide quantitative evidence. 
+ - Explain the role of feedback loops (e.g., MYC → MDM2 → p53)
+ - What are the limitations of this Boolean network model? Discuss 3 specific limitations.

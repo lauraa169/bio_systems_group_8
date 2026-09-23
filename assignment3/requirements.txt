@@ -1,2 +1,8 @@
 openpyxl
 nbformat
+py4cytoscape 
+pandas 
+numpy 
+matplotlib 
+seaborn 
+networkx

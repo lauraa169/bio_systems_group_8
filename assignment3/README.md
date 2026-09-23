@@ -1,3 +1,52 @@
+# Assignment 3 — Boolean Network Modeling
+
+**Topic**: Boolean network dynamics, attractor analysis, and mutation analysis  
+**Project**: Simplified cell regulatory network  
+**Main notebook**: `analysis.ipynb`
+**GROUP:**: 8
+
+---
+
+## 1. Repository overview
+
+- `analysis.ipynb` — main notebook containing the Boolean network analysis
+- `README.md` — this file
+
+**How to run**:
+
+Open `analysis.ipynb` in Jupyter Notebook, JupyterLab, or another compatible notebook environment and run the cells from top to bottom.
+
+---
+
+## 2. Requirements
+
+The notebook is implemented in Python and uses standard scientific Python libraries for the Boolean network analysis and visualization.
+**
+openpyxl
+nbformat
+py4cytoscape 
+pandas 
+numpy 
+matplotlib 
+seaborn 
+networkx
+
+
+The project can be run using Jupyter Notebook or JupyterLab.
+
+---
+
+## 3. Files required
+
+```text
+analysis.ipynb
+README.md
+```
+
+The notebook contains the Boolean network construction, scenario simulations, attractor analysis, basin analysis, and mutation analysis.
+
+---
+## 4. Required questions and their answers
  - Which mutation is most dangerous and why? Provide quantitative evidence. 
 
  Mutations A, B, C are all equally dangerous. The most dangerous one from a biological perspective is A, because it is the most direct cause, while B and C are equally dangerous but idirect causes to the same attractor. As evidence is the cancer-like basin size of one of the 2 attractors each has, where Growth = 1, DNA_damage = 1 and Death = 0. Aditionally, based on the percentage of all 256 states that lead to caner-like states, A, B and C have 50%, while D has 3.1%. For comparison, the original network also has a 3.1% cancer-like basin, so A, B, and C each multiply it by 16. These three mutations have these percentages bacuse 128 of the 256 states are cancer-like, while the other 128 belong to the basin of the DNA_damage = 0 attractor, the normal no-death growth state. Mutattion D adds a rule to TP53, which is not a node in the network, so it has no effect.
@@ -18,4 +67,5 @@ These two states form bistable toggle created by the mutual inhibitation between
 2. The network has only 8 nodes, which is too little for a biology network, especially fot the real p53 network which includes even more nodes. 
 
 3. There is no randomness in the netwrok. Real cells are noisy. For example, two cells that are the same can respong in two different ways to the same damage or change.
- 
+----
+

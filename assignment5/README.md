@@ -37,25 +37,22 @@ The documented runs and conclusions are summed up in the table below, relative t
 
 ## Experiment Results
 
-## Experiment Results
+### Baseline
 
-### Initial state
-
-<p align="center">
-  <img src="assignment5/imgs/00_base.png" width="400">
-</p>
+<img src="imgs/00_base.png" width="400">
 
 ### High division threshold
 
-| 30 min | 60 min | 90 min | 120 min |
-|:------:|:------:|:------:|:-------:|
-| <img src="assignment5/imgs/high_30.png" width="180"> | <img src="assignment5/imgs/high_60.png" width="180"> | <img src="assignment5/imgs/high_90.png" width="180"> | <img src="assignment5/imgs/high_120.png" width="180"> |
+|                        30 min                        |                        60 min                        |                        90 min                        |                        120 min                        |
+| :--------------------------------------------------: | :--------------------------------------------------: | :--------------------------------------------------: | :---------------------------------------------------: |
+| <img src="imgs/high_30.png" width="200"> | <img src="imgs/high_60.png" width="200"> | <img src="imgs/high_90.png" width="200"> | <img src="imgs/high_120.png" width="200"> |
 
 ### Low division threshold
 
-| 30 min | 60 min | 90 min | 120 min |
-|:------:|:------:|:------:|:-------:|
-| <img src="assignment5/imgs/low_30.png" width="180"> | <img src="assignment5/imgs/low_60.png" width="180"> | <img src="assignment5/imgs/low_90.png" width="180"> | <img src="assignment5/imgs/low_120.png" width="180"> |
+|                        30 min                       |                        60 min                       |                        90 min                       |                        120 min                       |
+| :-------------------------------------------------: | :-------------------------------------------------: | :-------------------------------------------------: | :--------------------------------------------------: |
+| <img src="imgs/low_30.png" width="200"> | <img src="imgs/low_60.png" width="200"> | <img src="imgs/low_90.png" width="200"> | <img src="imgs/low_120.png" width="200"> |
+
 
 
 # 5. What is a fundamental difference regarding cell neighbours in this model compared to all other models that you have worked with so far? 

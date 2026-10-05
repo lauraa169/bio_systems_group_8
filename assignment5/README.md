@@ -35,6 +35,25 @@ The documented runs and conclusions are summed up in the table below, relative t
 | 1   |       Low | More frequent cell division and faster expansion of the infected population |
 | 2   |      High | Less frequent division and slower population expansion                      |
 
+## Experiment Results
+
+### Baseline
+
+<img src="assignment5/imgs/00_base.png" width="400">
+
+### High division threshold
+
+|                        30 min                        |                        60 min                        |                        90 min                        |                        120 min                        |
+| :--------------------------------------------------: | :--------------------------------------------------: | :--------------------------------------------------: | :---------------------------------------------------: |
+| <img src="assignment5/imgs/high_30.png" width="200"> | <img src="assignment5/imgs/high_60.png" width="200"> | <img src="assignment5/imgs/high_90.png" width="200"> | <img src="assignment5/imgs/high_120.png" width="200"> |
+
+### Low division threshold
+
+|                        30 min                       |                        60 min                       |                        90 min                       |                        120 min                       |
+| :-------------------------------------------------: | :-------------------------------------------------: | :-------------------------------------------------: | :--------------------------------------------------: |
+| <img src="assignment5/imgs/low_30.png" width="200"> | <img src="assignment5/imgs/low_60.png" width="200"> | <img src="assignment5/imgs/low_90.png" width="200"> | <img src="assignment5/imgs/low_120.png" width="200"> |
+
+
 
 # 5. What is a fundamental difference regarding cell neighbours in this model compared to all other models that you have worked with so far? 
 

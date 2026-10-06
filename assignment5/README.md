@@ -1,14 +1,17 @@
 Assignment
 # 1. Open pathogen_infection model and run for a duration of 2h. Screenshot initial and every 30 min. Describe how the infected region spreads and how the tissue deforms.
 
-walls become less stiff -> Cells become rounder
+
+|                 0 min                 |                  30 min                  |                  60 min                  |                  90 min                  |                  120 min                  |
+| :--------------------------------------: | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: | :---------------------------------------: |
+| <img src="imgs/00m.png" width="200"> | <img src="imgs/30m.png" width="200"> | <img src="imgs/60m.png" width="200"> | <img src="imgs/90m.png" width="200"> | <img src="imgs/120m.png" width="200"> |
+
+The cells biome more separated, making the structure less rigid and allowing the infection to penetrate. The infection molds itself to the cells, it does not spread in a perfect circle, but it connects directly to the cell walls. As more time passes, surrounding cells become more affected, and the infection grows. 
 
 # 2. In the model files (Github repo – Models – Infection – infection.cpp9: Read CellHouseKeeping. In your own words: how is a cell's wall stiffness reduced as a function of its chemical level? What does the pathogen do differently?
 
-- The chemical level is first scaled by dividing it by 0.5. It is then capped at 1.2. 
-- if chem level is >0.1 wall stiffness is reduceed linearly based on the chem level `stiffness_inf = 3 - (patho_chem_level)`
-- cell type 2 is not affected
-	-> they enlarge and divide
+CellHouseKeeping models the degradation of the cell walls’s stiffness as a linear function of the Chemical(0), scaled by 0.5 for the concentration. This chemical is derived from the pathogen. If the chemical concentration is above 0.1 the wall stiffness drops, the minimum cell wall stiffness is 1.8. This process is what causes the cells to deform, meaning they become less rigid and allow the infection to spread faster. On the other hand, the pathogen behaves differently. It actively grows by increasing its target area and replicates itself using the divide function. It is also immune to the stiffness reduction of the cell walls, since it is explicitly excluded from it in the code. 
+
 
 # 3. In the model files (Github repo – Models – Infection – infection.cpp9: Read CelltoCellTransport. How is the diffusion coefficient defined? Explain the feedback loop this creates and sketch it: chemical lowers stiffness, lower stiffness raises diffusion, faster diffusion spreads the chemical. Is this positive or negative feedback?
 

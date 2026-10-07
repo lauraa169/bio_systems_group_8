@@ -54,6 +54,7 @@ The documented runs and conclusions are summed up in the table below, relative t
 
 
 # 5. What is a fundamental difference regarding cell neighbours in this model compared to all other models that you have worked with so far? 
+In comparison to the Auxin model the neighboring cells were all plant cells, every cell in the pathogen infection model can be of different type (even the pathogens are considered a cell, and it isnt a plant cell type) so basically we have morethan one cell type (not just plant cell)
 
 # 6. The plant evolves a defense: cells above a chemical threshold stiffen their walls. Describe in pseudocode where in CellHouseKeeping this would go and what sign of feedback it adds. Do not implement it. Pseudocode for the different sections is enough!
 

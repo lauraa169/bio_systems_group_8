@@ -56,3 +56,27 @@ The documented runs and conclusions are summed up in the table below, relative t
 # 5. What is a fundamental difference regarding cell neighbours in this model compared to all other models that you have worked with so far? 
 
 # 6. The plant evolves a defense: cells above a chemical threshold stiffen their walls. Describe in pseudocode where in CellHouseKeeping this would go and what sign of feedback it adds. Do not implement it. Pseudocode for the different sections is enough!
+
+The stiffness of the cell walls depends on chemical concentrations of the cell, the higher the concentration is (in accordance to a defense threshold) the more stiff the walls become.
+
+To implement this as code, we go to the `CellHouseKeeping` function and add the following pseudocode to it:
+
+### Pseudocode
+
+```text
+def cellHouseKeeping():
+
+    chemical_concentration = get(chemical_concentration)
+
+    if chemical_concentration > defense_threshold:
+        Increase cellwall_stiffness  #increase up to maximum stifness
+        
+    else:
+        continute #don't change wall stifness
+
+    continue #continue normal cell house keeping
+```
+
+This high stiffness will result in lower diffusion which cause the chemicals to spread more slowly (this causes less chemical to reach neighbouring cells).
+
+This is actually a negative feedback as higher chemical result in lower spread in contrast to the original positive feedback that increased spread as chemicals increased since the walls become less stiff and enabled more diffusion causing cell walls to become weaker.
